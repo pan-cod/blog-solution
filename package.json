@@ -92,6 +92,8 @@
     "webpack-stream": "^4.0.2"
   },
   "dependencies": {
+    "axios-es6": "^0.11.1",
+    "hyperhtml": "^2.23.0",
     "normalize-scss": "^7.0.1"
   },
   "engines": {
