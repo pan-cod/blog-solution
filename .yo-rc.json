@@ -8,6 +8,9 @@
       "nameCamel": "BlogSolution",
       "chiselVersion": "0.15.0",
       "has_jquery": false
-    }
+    },
+    "pages": [
+      "Blog"
+    ]
   }
 }
