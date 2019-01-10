@@ -3,30 +3,24 @@
   Author: Dariusz Markowicz
  */
 
-import hyperHTML from 'hyperhtml';
-import axios from 'axios-es6';
+import renderArticles from './modules/request';
 
-const container = document.querySelector('.c-container');
+document.addEventListener('DOMContentLoaded', () => {
+  let page = 1;
+  const apiUrl = 'https://stormy-shelf-93141.herokuapp.com/articles';
+  renderArticles(`${apiUrl}?_page=${page}&_limit=9`);
 
-function generateArticles(data) {
-  container.append(hyperHTML.wire()`<article data-id=${data.id}>
-  <p>${data.author}</p>
-  <h1>${data.title}</h1>
-  <img src="${data.imageUrl}">
-  ${data.article.split('"')}
-  </article>`);
-}
-
-async function getArticles(url) {
-  let articles = {};
-  await axios.get(url).then(res => {
-    articles = res.data;
-  });
-  return articles;
-}
-
-const renderArticles = url => {
-  getArticles(url).then(item => item.map(a => generateArticles(a)));
-};
-
-renderArticles('https://stormy-shelf-93141.herokuapp.com/articles');
+  window.onscroll = () => {
+    const htmlHeight = document.documentElement.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollPosition =
+      window.scrollY ||
+      window.pageYOffset ||
+      document.body.scrollTop +
+        ((document.documentElement && document.documentElement.scrollTop) || 0);
+    if (htmlHeight <= windowHeight + scrollPosition) {
+      page += 1;
+      renderArticles(`${apiUrl}?_page=${page}&_limit=9`);
+    }
+  };
+});
