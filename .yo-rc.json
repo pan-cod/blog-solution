@@ -1,0 +1,13 @@
+{
+  "generator-chisel": {
+    "config": {
+      "name": "Blog Solution",
+      "author": "Dariusz Markowicz",
+      "projectType": "fe",
+      "nameSlug": "blog-solution",
+      "nameCamel": "BlogSolution",
+      "chiselVersion": "0.15.0",
+      "has_jquery": false
+    }
+  }
+}
