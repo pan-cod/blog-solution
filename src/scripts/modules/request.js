@@ -4,11 +4,13 @@ import axios from 'axios-es6';
 const container = document.querySelector('.c-container');
 
 function generateArticles(data) {
+  const singleParagraphs = data.article.match(/<p>.*?<\/p>/g);
+
   container.append(hyperHTML.wire()`<article data-id=${data.id}>
   <p>${data.author}</p>
   <h1>${data.title}</h1>
   <img src="${data.imageUrl}">
-  ${data.article.split('"')}
+  ${singleParagraphs[0].split('')}
   </article>`);
 }
 
@@ -19,6 +21,7 @@ async function getArticles(url) {
     .then(res => res.data.sort((a, b) => new Date(b.date) - new Date(a.date)))
     .then(json => {
       articles = json;
+      console.log(articles)
     });
   return articles;
 }
