@@ -8,7 +8,6 @@
 
 .o-wrapper {
   @include clearfix();
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1200px;
+  max-width: 100vw;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }

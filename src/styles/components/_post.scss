@@ -1,0 +1,12 @@
+.c-post__preview {
+  padding: 1.823vw 4.167vw;
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.c-post__text {
+  height: 4.6em; /* exactly 3 lines */
+  overflow: hidden;
+}

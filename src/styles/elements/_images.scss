@@ -12,11 +12,10 @@
 
 img {
   font-style: italic; /* [2] */
-  max-width: 100%; /* [1] */
+  max-height: 100%; /* [1] */
+  max-width: 100%;
   vertical-align: middle; /* [3] */
 }
-
-
 /**
  * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
  *    not make the image fluid.

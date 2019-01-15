@@ -3,22 +3,33 @@ import axios from 'axios-es6';
 
 const container = document.querySelector('.c-section');
 
-function generateArticles(data) {
+function generatePosts(data, i) {
   const singleParagraphs = data.article.match(/<p>.*?<\/p>/g);
   const endOftitle = data.title.indexOf('.');
-  const forceUnique = `${data.imageUrl}?sig=${Math.floor(
-    Math.random() * 1000,
-  )}`;
+  const forceUnique = `${data.imageUrl}?sig=${Math.floor(Math.random() * 123)}`;
+  const temp = 1 + i;
 
-  container.append(hyperHTML.wire()`<article data-id=${data.id}>
+  container.append(hyperHTML.wire()`<article class="o-layout__item c-post" data-id=${
+    data.id
+  }>
+  <img class="${temp % 3 === 0 ? 'c-post__img' : null}" src="${forceUnique}">
+  <div class="c-post__preview">
   <p>${data.author}</p>
   <h1>${data.title.substring(0, endOftitle + 1)}</h1>
-  <img src="${forceUnique}">
+  <div class="c-post__text">
   ${singleParagraphs[0].split('')}
+  </div>
+  <i class="c-btn">
+  <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10.024 0H16.039L24 8L16.039 16H10.024L17.985 8L10.024 0ZM0 16H6.015L13.976 8L6.015 0H0L7.961 8L0 16H0Z" fill="#032937"/>
+  </svg>
+</i>
+  </div>
+
   </article>`);
 }
 
-async function getArticles(url) {
+async function getPosts(url) {
   let articles = {};
   await axios
     .get(url)
@@ -29,8 +40,8 @@ async function getArticles(url) {
   return articles;
 }
 
-const renderArticles = url => {
-  getArticles(url).then(item => item.map(a => generateArticles(a)));
+const renderPosts = url => {
+  getPosts(url).then(item => item.map((el, i) => generatePosts(el, i)));
 };
 
-export default renderArticles;
+export default renderPosts;

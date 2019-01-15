@@ -17,10 +17,9 @@ html {
   color: $color-text;
   font-family: $font-sans-serif;
   font-size: 0.8125rem; /* [1] */ /* 13px */
-  line-height: 1.5; /* [1] */
+  line-height: 1.5;
   min-height: 100%; /* [3] */
   overflow-y: scroll; /* [2] */
-  padding: 1rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -34,7 +33,11 @@ html {
   }
 
   @include bp(full) {
-    font-size: 1em; /* 16px */
+    font-size: 1rem; /* 16px */
+  }
+
+  @include bp(full-hd) {
+    font-size: 1.5rem; /* 24px */
   }
 }
 

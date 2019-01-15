@@ -22,8 +22,8 @@ $breakpoints: (
   large: 1024px,
   xlarge: 1280px,
   full: 1600px,
+  full-hd: 1920px,
 );
-
 
 /* Colors
    ========================================================================== */
@@ -35,11 +35,15 @@ $color-very-light-grey: #ccc;
 $color-light-grey: #999;
 $color-medium-grey: #666;
 $color-dark-grey: #333;
+$color-gradient-green: linear-gradient(90deg, #249059 0%, #00565b 100%);
+$color-very-dark-green: #032937;
 
 // Text
-$color-bg: $color-white;
+$color-bg: $color-gradient-green;
 $color-text: $color-black;
-
+$color-post-bg: $color-white;
+$color-header-bg: $color-very-dark-green;
+$color-header-text: $color-white;
 // Links
 $color-link: $color-medium-grey;
 $color-hover: $color-light-grey;
