@@ -1,3 +1,7 @@
+.c-post {
+  cursor: pointer;
+}
+
 .c-post__preview {
   padding: 1.823vmax 4.167vmax;
   display: inherit;
@@ -7,7 +11,8 @@
 }
 
 .c-post__preview--big {
-  h1,
+
+  >h1,
   p {
     margin-bottom: 0.8125rem;
   }
@@ -18,7 +23,6 @@
 }
 
 .c-post__title {
-  font-weight: bold;
   background: $color-text-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

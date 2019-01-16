@@ -8,10 +8,18 @@
  */
 
 @font-face {
-  font-family: 'Rubik';
+  font-family: Rubik;
   font-style: normal;
   src: url('../assets/fonts/Rubik/Rubik-Regular.woff2') format('woff2'),
     url('../assets/fonts/Rubik/Rubik-Regular.woff') format('woff'),
     url('../assets/fonts/Rubik/Rubik-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: RubikBold;
+  font-style: normal;
+  src: url('../assets/fonts/Rubik/Rubik-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Rubik/Rubik-Bold.woff') format('woff'),
+    url('../assets/fonts/Rubik/Rubik-Bold.ttf') format('truetype');
   font-display: swap;
 }

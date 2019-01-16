@@ -10,8 +10,6 @@
   @include bp(medium) {
     display: flex;
     flex-flow: row wrap;
-    // grid-auto-rows: 16.667vmax 33.334vmax;
-    // grid-row-gap: 2.396vmax;
   }
 }
 
@@ -60,13 +58,19 @@
 //   }
 // }
 
-// .o-layout--2 {
-//   > .o-layout__item {
-//     @include bp(medium) {
-//       width: 49%;
-//     }
-//   }
-// }
+.o-layout--2 {
+  > .o-layout__item {
+    margin: 0;
+    flex-direction: column;
+
+    @include bp(medium) {
+      width: 49.69%;
+      height: auto;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
 
 // .o-layout--3 {
 //   > .o-layout__item {

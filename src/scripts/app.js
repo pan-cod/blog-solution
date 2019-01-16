@@ -3,13 +3,13 @@
   Author: Dariusz Markowicz
  */
 
-import renderPosts from './modules/request';
+import renderPosts from './modules/renderPosts';
+import observer from './modules/observer';
 
 document.addEventListener('DOMContentLoaded', () => {
   let page = 1;
   const apiUrl = 'https://stormy-shelf-93141.herokuapp.com/articles';
   renderPosts(`${apiUrl}?_page=${page}&_limit=9`);
-
   window.onscroll = () => {
     const htmlHeight = document.documentElement.offsetHeight;
     const windowHeight = window.innerHeight;
@@ -23,4 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
       renderPosts(`${apiUrl}?_page=${page}&_limit=9`);
     }
   };
+
+  const target = document.querySelector('.o-layout');
+  observer.observe(target, { childList: true });
+
+  document.querySelector('.c-header__heading').addEventListener(
+    'click',
+    () => {
+      document.querySelector('.c-article').className = 'c-article';
+      document.querySelector('.c-header__heading').className =
+        'c-header__heading';
+    },
+    false,
+  );
 });

@@ -14,9 +14,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
-
+  z-index: 3;
 }
+
 .c-header__heading {
   margin-bottom: 0;
+}
+
+.c-header__heading--clickable {
+  cursor: pointer;
 }
