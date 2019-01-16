@@ -16,10 +16,7 @@
   align-items: center;
   z-index: 1;
 
-  @include bp(medium) {
-
-  }
 }
 .c-header__heading {
-   margin-bottom: 0;
+  margin-bottom: 0;
 }

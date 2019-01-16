@@ -19,7 +19,7 @@ function generatePosts(data, i) {
         : 'c-post__preview'
     }">
       <p>${data.author}</p>
-      <h1>${data.title.substring(0, endOftitle + 1)}</h1>
+      <h1 class="c-post__title">${data.title.substring(0, endOftitle + 1)}</h1>
       <div class="c-post__text">
       ${singleParagraphs[0].split('')}
       </div>

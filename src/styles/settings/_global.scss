@@ -10,19 +10,25 @@ $global-transition: all 300ms ease-in-out !default;
 /* Fonts
    ========================================================================== */
 
-$font-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
-  'Roboto', 'Helvetica Neue', 'Arial', sans-serif !default;
+$font-sans-serif: -apple-system,
+system-ui,
+BlinkMacSystemFont,
+'Segoe UI',
+'Roboto',
+'Helvetica Neue',
+'Arial',
+sans-serif !default;
+$font-rubik-regular: 'Rubik';
 
 /* Breakpoints
    ========================================================================== */
 
-$breakpoints: (
-  small: 480px,
-  medium: 768px,
-  large: 1024px,
-  xlarge: 1280px,
-  full: 1600px,
-  full-hd: 1920px,
+$breakpoints: (small: 480px,
+medium: 768px,
+large: 1024px,
+xlarge: 1280px,
+full: 1600px,
+full-hd: 1920px,
 );
 
 /* Colors
@@ -36,13 +42,16 @@ $color-light-grey: #999;
 $color-medium-grey: #666;
 $color-dark-grey: #333;
 $color-gradient-green: linear-gradient(90deg, #249059 0%, #00565b 100%);
-$color-very-dark-green: #032937;
+$color-gradient-green-reverse: linear-gradient(90deg, #00565b 0%, #249059 100%);
+$color-daintree: #032937;
+$color-mine-shaft: #2D2D2D;
 
 // Text
 $color-bg: $color-gradient-green;
-$color-text: $color-black;
+$color-text: $color-mine-shaft;
+$color-text-gradient: $color-gradient-green-reverse;
 $color-post-bg: $color-white;
-$color-header-bg: $color-very-dark-green;
+$color-header-bg: $color-daintree;
 $color-header-text: $color-white;
 // Links
 $color-link: $color-medium-grey;

@@ -7,7 +7,6 @@
 }
 
 .c-post__preview--big {
-
   h1,
   p {
     margin-bottom: 0.8125rem;
@@ -18,7 +17,14 @@
   min-width: 33.334vw;
 }
 
+.c-post__title {
+  font-weight: bold;
+  background: $color-text-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .c-post__text {
-  height: 4.6em; /* max 3 lines */
+  height: 4.6em;
   overflow: hidden;
 }
