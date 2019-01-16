@@ -1,12 +1,24 @@
 .c-post__preview {
-  padding: 1.823vw 4.167vw;
+  padding: 1.823vmax 4.167vmax;
   display: inherit;
   flex-direction: column;
   justify-content: center;
   position: relative;
 }
 
+.c-post__preview--big {
+
+  h1,
+  p {
+    margin-bottom: 0.8125rem;
+  }
+}
+
+.c-post__img {
+  min-width: 33.334vw;
+}
+
 .c-post__text {
-  height: 4.6em; /* exactly 3 lines */
+  height: 4.6em; /* max 3 lines */
   overflow: hidden;
 }

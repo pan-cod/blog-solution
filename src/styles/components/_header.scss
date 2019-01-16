@@ -4,17 +4,21 @@
 
 .c-header {
   position: fixed;
-  top: 40px;
+  top: 2.083vmax;
   left: 0;
   width: 100vw;
   height: 5.209vmax;
   background: $color-header-bg;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
   color: $color-header-text;
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  z-index: 1;
 
+  @include bp(medium) {
+
+  }
 }
 .c-header__heading {
    margin-bottom: 0;

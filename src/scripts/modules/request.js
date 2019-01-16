@@ -12,19 +12,23 @@ function generatePosts(data, i) {
   container.append(hyperHTML.wire()`<article class="o-layout__item c-post" data-id=${
     data.id
   }>
-  <img class="${temp % 3 === 0 ? 'c-post__img' : null}" src="${forceUnique}">
-  <div class="c-post__preview">
-  <p>${data.author}</p>
-  <h1>${data.title.substring(0, endOftitle + 1)}</h1>
-  <div class="c-post__text">
-  ${singleParagraphs[0].split('')}
-  </div>
-  <i class="c-btn">
-  <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M10.024 0H16.039L24 8L16.039 16H10.024L17.985 8L10.024 0ZM0 16H6.015L13.976 8L6.015 0H0L7.961 8L0 16H0Z" fill="#032937"/>
-  </svg>
-</i>
-  </div>
+    <img class="${temp % 3 === 0 ? 'c-post__img' : null}" src="${forceUnique}">
+    <div class="${
+      temp % 3 === 0
+        ? 'c-post__preview c-post__preview--big'
+        : 'c-post__preview'
+    }">
+      <p>${data.author}</p>
+      <h1>${data.title.substring(0, endOftitle + 1)}</h1>
+      <div class="c-post__text">
+      ${singleParagraphs[0].split('')}
+      </div>
+      <i class="c-btn">
+        <svg viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.024 0H16.039L24 8L16.039 16H10.024L17.985 8L10.024 0ZM0 16H6.015L13.976 8L6.015 0H0L7.961 8L0 16H0Z" fill="#032937"/>
+        </svg>
+      </i>
+    </div>
 
   </article>`);
 }

@@ -22,17 +22,25 @@
   @include bp(medium) {
     display: inline-flex;
     justify-content: flex-end;
-    width: 50%;
+
+    width: 50vw;
     height: 16.667vmax;
 
     &:nth-child(6n + 3) {
-      width: 66.667%;
+      width: 66.667vw;
       height: 33.334vmax;
       margin-left: auto;
     }
 
+    &:nth-child(6n + 4) {
+      flex-direction: row-reverse;
+    }
+    &:nth-child(6n + 5) {
+      flex-direction: row-reverse;
+    }
+
     &:nth-child(6n + 6) {
-      width: 66.667%;
+      width: 66.667vw;
       height: 33.334vmax;
       margin-right: auto;
     }
