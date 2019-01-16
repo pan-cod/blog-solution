@@ -11,9 +11,7 @@
 }
 
 .c-post__preview--big {
-
-  >h1,
-  p {
+  > h1, p {
     margin-bottom: 0.8125rem;
   }
 }
@@ -25,6 +23,7 @@
 .c-post__title {
   background: $color-text-gradient;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
