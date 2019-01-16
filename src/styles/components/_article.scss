@@ -9,7 +9,6 @@
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   z-index: 2;
-
 }
 
 .c-article__img {
@@ -35,15 +34,12 @@
 
 .c-article__inner {
   background: $color-white;
-  position: absolute;
-  height: min-content;
-
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
 
   @include bp(medium) {
     margin-left: calc((100% - 66.6667%) / 2);
     width: 66.6667%;
-    margin-bottom: 10.4167vmax
-
+    margin-bottom: 10.4167vmax;
   }
 }
 
@@ -56,7 +52,6 @@
   margin-top: 6.458vw;
   margin-bottom: 6.458vw;
   padding: 0 1.5em 3em;
-
 
   @include bp(medium) {
     > p {
