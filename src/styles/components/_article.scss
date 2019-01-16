@@ -34,7 +34,7 @@
 
 .c-article__inner {
   background: $color-white;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 
   @include bp(medium) {
     margin-left: calc((100% - 66.6667%) / 2);
