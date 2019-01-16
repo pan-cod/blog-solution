@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.c-header__heading').addEventListener(
     'click',
     () => {
-      document.querySelector('.c-article').className = 'c-article';
+      document.querySelector('.c-aside').className = 'c-aside';
       document.querySelector('.c-header__heading').className =
         'c-header__heading';
     },
