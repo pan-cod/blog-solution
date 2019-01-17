@@ -1,6 +1,8 @@
 import axios from 'axios-es6';
 
+const body = document.querySelector('body');
 const aside = document.querySelector('.c-aside');
+const heading = document.querySelector('.c-header__heading');
 
 async function getSinglePost(url) {
   let article = {};
@@ -37,9 +39,9 @@ function showArticle(data) {
 
   </article>`;
   aside.innerHTML = article;
-  document.querySelector('.c-aside').className += ' c-aside--open';
-  document.querySelector('.c-header__heading').className +=
-    ' c-header__heading--clickable';
+  body.classList.add('u-noscroll');
+  aside.classList.add('c-aside--open');
+  heading.classList.add('c-header__heading--clickable');
 }
 
 const showSingleArticle = (url, id) => {

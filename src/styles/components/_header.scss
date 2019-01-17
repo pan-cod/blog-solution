@@ -3,9 +3,10 @@
    ========================================================================== */
 
 .c-header {
-  position: fixed;
-  top: 2.083vmax;
+  position: sticky;
+  top: 0;
   left: 0;
+  margin-top: 2.083vmax;
   width: 100vw;
   height: 5.209vmax;
   background: $color-header-bg;

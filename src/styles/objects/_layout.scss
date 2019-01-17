@@ -21,11 +21,11 @@
     display: inline-flex;
     justify-content: flex-end;
 
-    width: 50vw;
+    width: 50%;
     height: 16.667vmax;
 
     &:nth-child(6n + 3) {
-      width: 66.667vw;
+      width: 66.667%;
       height: 33.334vmax;
       margin-left: auto;
     }
@@ -39,7 +39,7 @@
     }
 
     &:nth-child(6n + 6) {
-      width: 66.667vw;
+      width: 66.667%;
       height: 33.334vmax;
       margin-right: auto;
     }
@@ -65,7 +65,7 @@
 
     @include bp(medium) {
       width: 50%;
-      height: 33.3334vw;
+      height: 33.334vw;
       justify-content: center;
       align-items: center;
     }

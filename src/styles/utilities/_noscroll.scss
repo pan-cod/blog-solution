@@ -1,0 +1,7 @@
+.u-noscroll {
+  overflow: hidden;
+}
+
+.u-noscroll::-webkit-scrollbar {
+  display: none;
+}
