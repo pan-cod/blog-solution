@@ -21,7 +21,8 @@ function showArticle(data) {
   const forceUnique = `${data.imageUrl}?sig=${Math.floor(Math.random() * 123)}`;
   const date = new Date(data.date).toDateString().split(' ');
   const article = `<article class="c-article" data-id=${data.id}>
-   <div class="c-article__inner o-layout o-layout--2">
+  <div class="c-article__overlay">
+    <div class="c-article__inner o-layout o-layout--2">
       <div class="o-layout__item">
       <img class="c-article__img" src="${forceUnique}">
       </div>
@@ -36,7 +37,7 @@ function showArticle(data) {
       ${singleParagraphs.join('')}
       </div>
    </div>
-
+  </div>
   </article>`;
   aside.innerHTML = article;
   body.classList.add('u-noscroll');

@@ -5,10 +5,14 @@
   left: 0;
   bottom: 0;
   right: 0;
-  padding-top: 10.4167vmax;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   z-index: 2;
+}
+.c-article__overlay {
+  padding-top: 10.4167vmax;
+
+  height: auto;
 }
 
 .c-article::-webkit-scrollbar {
