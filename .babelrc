@@ -1,12 +1,11 @@
 {
   "presets": [
     [
-    "@babel/preset-env",
-    {
-      "targets": {
-        "browsers": ["last 2 Chrome versions"]
+      "@babel/preset-env", {
+        "useBuiltIns": "usage",
+        "debug":true
       }
-    }
-  ]],
+    ]
+  ],
   "plugins": ["@babel/plugin-syntax-dynamic-import"]
 }

@@ -51,7 +51,9 @@ const showSingleArticle = (url, id) => {
   );
 };
 
-/* The following solution was adapted from https://davidwalsh.name/mutationobserver-api */
+// Using observer was adapted from https://davidwalsh.name/mutationobserver-api
+// this adding click event listener for every dynamically added post in blog page
+
 const apiUrl = 'https://stormy-shelf-93141.herokuapp.com/articles';
 
 const observer = new MutationObserver(mutations => {
@@ -65,7 +67,6 @@ const observer = new MutationObserver(mutations => {
       },
       false,
     );
-    // observer.disconnect();
   });
 });
 

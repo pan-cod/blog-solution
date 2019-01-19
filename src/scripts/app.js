@@ -2,7 +2,6 @@
   Project: Blog Solution
   Author: Dariusz Markowicz
  */
-
 import renderPosts from './modules/renderPosts';
 import observer from './modules/observer';
 
@@ -12,6 +11,7 @@ const target = document.querySelector('.o-layout');
 const body = document.querySelector('body');
 const aside = document.querySelector('.c-aside');
 const heading = document.querySelector('.c-header__heading');
+// const uk = document.querySelector('.o-layout');
 
 document.addEventListener('DOMContentLoaded', () => {
   observer.observe(target, { childList: true });
@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       heading.classList.remove('c-header__heading--clickable');
     },
     false,
-  );
-
+  ); // uk.onscroll = (e) => console.log(e);
   window.onscroll = () => {
     const htmlHeight = document.documentElement.offsetHeight;
     const windowHeight = window.innerHeight;
@@ -40,6 +39,5 @@ document.addEventListener('DOMContentLoaded', () => {
       page += 1;
       renderPosts(`${apiUrl}?_page=${page}&_limit=9`);
     }
-    if (page === 12) observer.disconnect();
   };
 });
