@@ -17,24 +17,13 @@
  */
 
 .c-btn {
-  // display: inline-block; /* [1] */
-  // vertical-align: middle; /* [2] */
-  // font: inherit; /* [3] */
-  // text-align: center; /* [4] */
-  // margin: 0; /* [4] */
-  // cursor: pointer; /* [5] */
-  // padding: 0.5rem 1rem;
-  // transition: $global-transition;
-  // border-radius: $global-radius;
-  // align-self: flex-end;
-  // padding: 0 2.291vw 2.083vw 0.834vw;
-  flex-direction: column-reverse;
-  align-items: flex-end;
   position: absolute;
   bottom: 3.29167vmax;
   right: 2.0834vmax;
+
   width: 1.25vmax;
   height: 0.8334vmax;
+
   cursor: pointer;
 
   @include bp(medium) {

@@ -4,24 +4,27 @@
 
 .c-header {
   position: sticky;
+  z-index: 3;
   top: 0;
   left: 0;
-  margin-top: 2.083vmax;
-  width: 100vw;
-  height: 5.209vmax;
-  background: $color-header-bg;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  color: $color-header-text;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 3;
+
+  width: 100%;
+  height: 5.209vmax;
+  margin-top: 2.083vmax;
+
+  background: $color-header-bg;
+  color: $color-header-text;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
-.c-header__heading {
+.c-header__headline {
   margin-bottom: 0;
 }
 
-.c-header__heading--clickable {
+.c-header__headline--clickable {
   cursor: pointer;
 }

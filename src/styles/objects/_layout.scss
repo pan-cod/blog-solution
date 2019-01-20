@@ -14,13 +14,12 @@
 }
 
 .o-layout__item {
-  background: $color-post-bg;
   margin: 2.396vmax 0;
+  background: $color-post-bg;
 
   @include bp(medium) {
     display: inline-flex;
     justify-content: flex-end;
-
     width: 50%;
     height: 16.667vmax;
 
@@ -60,14 +59,14 @@
 
 .o-layout--2 {
   > .o-layout__item {
-    margin: 0;
     flex-direction: column;
+    margin: 0;
 
     @include bp(medium) {
-      width: 50%;
-      height: 33.334vw;
       justify-content: center;
       align-items: center;
+      width: 50%;
+      height: 33.334vw;
     }
   }
 }

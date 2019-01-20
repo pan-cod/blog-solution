@@ -63,3 +63,6 @@ $color-border: $color-very-light-grey;
 
 // Fills
 $color-fill: $color-very-light-grey;
+
+// Other transitions
+$transition-article: right 1000ms cubic-bezier(0.19, 1, 0.22, 1), opacity 700ms cubic-bezier(0.19, 1, 0.22, 1);

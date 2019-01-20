@@ -1,18 +1,20 @@
 .c-article {
-  background: $color-bg;
   position: absolute;
+  z-index: 2;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+
   overflow: auto;
+
+  background: $color-bg;
   -webkit-overflow-scrolling: touch;
-  z-index: 2;
 }
 
 .c-article__overlay {
-  padding-top: 10.4167vmax;
   height: auto;
+  padding-top: 10.4167vmax;
 }
 
 .c-article::-webkit-scrollbar {
@@ -45,8 +47,8 @@
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 
   @include bp(medium) {
-    margin-left: calc((100% - 66.6667%) / 2);
     width: 66.6667%;
+    margin-left: calc((100% - 66.6667%) / 2);
     margin-bottom: 10.4167vmax;
   }
 }
@@ -54,9 +56,9 @@
 .c-article__text {
   display: inherit;
   flex-direction: column;
-  width: 100%;
   justify-content: center;
   align-items: center;
+  width: 100%;
   margin-top: 6.458vw;
   margin-bottom: 6.458vw;
   padding: 0 1.5em 3em;

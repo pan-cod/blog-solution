@@ -1,9 +1,7 @@
 import hyperHTML from 'hyperhtml';
 import axios from 'axios-es6';
 
-// for sorting posts from Api use this method at 13 line res.data.sort((a, b) => new Date(b.date) - new Date(a.date))
-
-const posts = document.querySelector('.o-layout');
+// for sorting posts from Api use this method at 10 line: res.data.sort((a, b) => new Date(b.date) - new Date(a.date))
 
 async function getPosts(url) {
   let articles = {};
@@ -15,7 +13,9 @@ async function getPosts(url) {
     });
   return articles;
 }
+
 function generatePosts(data, i) {
+  const posts = document.querySelector('.o-layout');
   const singleParagraphs = data.article.match(/<p>.*?<\/p>/g);
   const endOftitle = data.title.indexOf('.');
   const forceUnique = `${data.imageUrl}?sig=${Math.floor(Math.random() * 123)}`;

@@ -3,11 +3,12 @@
 }
 
 .c-post__preview {
-  padding: 1.823vmax 4.167vmax;
+  position: relative;
+
   display: inherit;
   flex-direction: column;
   justify-content: center;
-  position: relative;
+  padding: 1.823vmax 4.167vmax;
 }
 
 .c-post__preview--big {
@@ -28,6 +29,6 @@
 }
 
 .c-post__text {
-  height: 4.6em;
   overflow: hidden;
+  height: 4.6em;
 }
