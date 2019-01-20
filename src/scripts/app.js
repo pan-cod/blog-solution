@@ -3,7 +3,7 @@
   Author: Dariusz Markowicz
  */
 import renderPosts from './modules/renderPosts';
-import observer from './modules/observer';
+import observer from './modules/observerList';
 import handleScroll from './modules/handleScroll';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       body.classList.remove('u-noscroll');
       aside.classList.remove('c-aside--open');
       heading.classList.remove('c-header__headline--clickable');
+      aside.removeChild(document.querySelector('.c-article'));
     },
     false,
   );

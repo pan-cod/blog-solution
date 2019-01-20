@@ -1,4 +1,5 @@
 import axios from 'axios-es6';
+import hyperHTML from 'hyperhtml';
 
 async function getSinglePost(url) {
   let article = {};
@@ -19,7 +20,9 @@ function showArticle(data) {
   const endOftitle = data.title.indexOf('.');
   const forceUnique = `${data.imageUrl}?sig=${Math.floor(Math.random() * 123)}`;
   const date = new Date(data.date).toDateString().split(' ');
-  const article = `<article class="c-article" data-id=${data.id}>
+  const article = hyperHTML.wire()`<article class="c-article" data-id=${
+    data.id
+  }>
   <div class="c-article__overlay">
     <div class="c-article__inner o-layout o-layout--2">
       <div class="o-layout__item">
@@ -33,12 +36,12 @@ function showArticle(data) {
         </div>
       </div>
       <div class="c-article__text">
-      ${singleParagraphs.join('')}
+      ${singleParagraphs}
       </div>
    </div>
   </div>
   </article>`;
-  aside.innerHTML = article;
+  aside.appendChild(article);
   body.classList.add('u-noscroll');
   aside.classList.add('c-aside--open');
   heading.classList.add('c-header__headline--clickable');
