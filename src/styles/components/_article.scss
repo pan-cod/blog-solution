@@ -27,14 +27,16 @@
 .c-article__desc {
   padding: 1.5em 1.5em 0;
 
-  > h1, p {
-    margin-bottom: 1.625rem;
-  }
-
   @include bp(medium) {
     width: 20.834vw;
     padding: 0;
   }
+}
+
+.c-article__desc-author,
+.c-article__desc-date,
+.c-article__desc-title {
+  margin-bottom: 1.625rem;
 }
 
 .c-article__desc-date {
@@ -61,7 +63,7 @@
   margin-top: 6.458vw;
   margin-bottom: 6.458vw;
   padding: 0 1.5em 3em;
-
+  // below was used HTML tag target because fetched JSON includes paragraphs tags
   @include bp(medium) {
     > p {
       width: 36.458vw;

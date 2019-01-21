@@ -3,30 +3,34 @@
   Author: Dariusz Markowicz
  */
 import renderPosts from './modules/renderPosts';
-import observer from './modules/observerList';
-import handleScroll from './modules/handleScroll';
+import rendePostsOnScroll from './modules/renderPostsOnScroll';
+import renderPost from './modules/renderPost';
+import renderPostOnClick from './modules/renderPostOnClick';
+import config from './config/config';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const apiUrl = 'https://stormy-shelf-93141.herokuapp.com/articles';
-  const target = document.querySelector('.o-layout');
-  const body = document.querySelector('body');
-  const aside = document.querySelector('.c-aside');
-  const heading = document.querySelector('.c-header__headline');
+const target = document.querySelector('.js-list');
+const body = document.querySelector('.js-body');
+const aside = document.querySelector('.js-aside');
+const heading = document.querySelector('.js-headline');
 
-  observer.observe(target, { childList: true });
+renderPostOnClick(config.API_URL, target, renderPost);
 
-  renderPosts(`${apiUrl}?_page=1&_limit=9`);
+renderPosts(`${config.API_URL}?_page=1&_limit=9`);
 
-  heading.addEventListener(
-    'click',
-    () => {
-      body.classList.remove('u-noscroll');
-      aside.classList.remove('c-aside--open');
-      heading.classList.remove('c-header__headline--clickable');
-      aside.removeChild(document.querySelector('.c-article'));
-    },
-    false,
-  );
+heading.addEventListener(
+  'click',
+  () => {
+    if (aside.classList.contains('is-open')) {
+      body.classList.remove('is-noscroll');
+      aside.classList.remove('is-open');
+      heading.classList.remove('is-clickable');
+      aside.removeChild(document.querySelector('.js-article'));
+    }
+  },
+  false,
+);
 
-  document.addEventListener('scroll', handleScroll);
-});
+document.addEventListener(
+  'scroll',
+  rendePostsOnScroll(config.API_URL, renderPosts),
+);

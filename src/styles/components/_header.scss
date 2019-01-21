@@ -23,8 +23,8 @@
 
 .c-header__headline {
   margin-bottom: 0;
-}
 
-.c-header__headline--clickable {
-  cursor: pointer;
+  &.is-clickable {
+    cursor: pointer;
+  }
 }

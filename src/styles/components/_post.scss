@@ -12,7 +12,8 @@
 }
 
 .c-post__preview--big {
-  > h1, p {
+  > .c-post__title,
+  .c-post__author {
     margin-bottom: 0.8125rem;
   }
 }

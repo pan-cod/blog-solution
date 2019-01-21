@@ -9,9 +9,9 @@
   opacity: 0;
   background: $color-bg;
   transition: $transition-article;
-}
 
-.c-aside--open {
-  right: 0;
-  opacity: 1;
+  &.is-open {
+    right: 0;
+    opacity: 1;
+  }
 }

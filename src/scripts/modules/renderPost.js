@@ -1,5 +1,4 @@
 import axios from 'axios-es6';
-import hyperHTML from 'hyperhtml';
 
 async function getSinglePost(url) {
   let article = {};
@@ -13,16 +12,15 @@ async function getSinglePost(url) {
 }
 
 function showArticle(data) {
-  const body = document.querySelector('body');
-  const aside = document.querySelector('.c-aside');
-  const heading = document.querySelector('.c-header__headline');
+  const bodyTag = document.querySelector('.js-body');
+  const asideTag = document.querySelector('.js-aside');
+  const headingTag = document.querySelector('.js-headline');
   const singleParagraphs = data.article.match(/<p>.*?<\/p>/g);
   const endOftitle = data.title.indexOf('.');
   const forceUnique = `${data.imageUrl}?sig=${Math.floor(Math.random() * 123)}`;
   const date = new Date(data.date).toDateString().split(' ');
-  const article = hyperHTML.wire()`<article class="c-article" data-id=${
-    data.id
-  }>
+
+  const article = `<article class="c-article js-article">
   <div class="c-article__overlay">
     <div class="c-article__inner o-layout o-layout--2">
       <div class="o-layout__item">
@@ -31,7 +29,7 @@ function showArticle(data) {
       <div class="o-layout__item">
         <div class="c-article__desc">
           <p class="c-article__desc-date">${date[1]} ${date[2]}, ${date[3]}</p>
-          <p>${data.author}</p>
+          <p class="c-article__desc-author">${data.author}</p>
           <h1 class="c-post__title">${data.title.substring(0, endOftitle)}</h1>
         </div>
       </div>
@@ -41,10 +39,11 @@ function showArticle(data) {
    </div>
   </div>
   </article>`;
-  aside.appendChild(article);
-  body.classList.add('u-noscroll');
-  aside.classList.add('c-aside--open');
-  heading.classList.add('c-header__headline--clickable');
+
+  asideTag.innerHTML = article;
+  bodyTag.classList.add('is-noscroll');
+  asideTag.classList.add('is-open');
+  headingTag.classList.add('is-clickable');
 }
 
 const renderPost = (url, id) => {

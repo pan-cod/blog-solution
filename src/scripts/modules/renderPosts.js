@@ -15,7 +15,7 @@ async function getPosts(url) {
 }
 
 function generatePosts(data, i) {
-  const posts = document.querySelector('.o-layout');
+  const posts = document.querySelector('.js-list');
   const singleParagraphs = data.article.match(/<p>.*?<\/p>/g);
   const endOftitle = data.title.indexOf('.');
   const forceUnique = `${data.imageUrl}?sig=${Math.floor(Math.random() * 123)}`;
@@ -29,7 +29,7 @@ function generatePosts(data, i) {
         ? 'c-post__preview c-post__preview--big'
         : 'c-post__preview'
     }">
-      <p>${data.author}</p>
+      <p class="c-post__author">${data.author}</p>
       <h1 class="c-post__title">${data.title.substring(0, endOftitle)}</h1>
       <div class="c-post__text">
       ${singleParagraphs[0].split('')}
