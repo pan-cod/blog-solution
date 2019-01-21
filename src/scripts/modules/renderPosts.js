@@ -15,7 +15,7 @@ async function getPosts(url) {
 }
 
 function generatePosts(data, i) {
-  const posts = document.querySelector('.js-list');
+  const target = document.querySelector('.js-list');
   const singleParagraphs = data.article.match(/<p>.*?<\/p>/g);
   const endOftitle = data.title.indexOf('.');
   const forceUnique = `${data.imageUrl}?sig=${Math.floor(Math.random() * 123)}`;
@@ -41,7 +41,7 @@ function generatePosts(data, i) {
       </i>
     </div>
   </li>`;
-  posts.appendChild(generatedPost);
+  target.appendChild(generatedPost);
 }
 
 const renderPosts = url => {

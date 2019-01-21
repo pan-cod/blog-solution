@@ -9,22 +9,22 @@ import renderPostOnClick from './modules/renderPostOnClick';
 import config from './config/config';
 
 const target = document.querySelector('.js-list');
-const body = document.querySelector('.js-body');
-const aside = document.querySelector('.js-aside');
-const heading = document.querySelector('.js-headline');
+const bodyTag = document.querySelector('.js-body');
+const asideTag = document.querySelector('.js-aside');
+const headingTag = document.querySelector('.js-headline');
 
 renderPostOnClick(config.API_URL, target, renderPost);
 
 renderPosts(`${config.API_URL}?_page=1&_limit=9`);
 
-heading.addEventListener(
+headingTag.addEventListener(
   'click',
   () => {
-    if (aside.classList.contains('is-open')) {
-      body.classList.remove('is-noscroll');
-      aside.classList.remove('is-open');
-      heading.classList.remove('is-clickable');
-      aside.removeChild(document.querySelector('.js-article'));
+    if (asideTag.classList.contains('is-open')) {
+      bodyTag.classList.remove('is-noscroll');
+      asideTag.classList.remove('is-open');
+      headingTag.classList.remove('is-clickable');
+      asideTag.removeChild(document.querySelector('.js-article'));
     }
   },
   false,
