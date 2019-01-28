@@ -1,15 +1,4 @@
-import axios from 'axios-es6';
-
-async function getSinglePost(url) {
-  let article = {};
-  await axios
-    .get(url)
-    .then(res => res.data)
-    .then(json => {
-      article = json;
-    });
-  return article;
-}
+import { getPosts } from '../lib/lib';
 
 function showArticle(data) {
   const bodyTag = document.querySelector('.js-body');
@@ -47,7 +36,7 @@ function showArticle(data) {
 }
 
 const renderPost = (url, id) => {
-  getSinglePost(url, id).then(item =>
+  getPosts(url, id).then(item =>
     item.filter(el => el.id === id).map(el => showArticle(el)),
   );
 };

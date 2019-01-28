@@ -1,18 +1,5 @@
-import axios from 'axios-es6';
 import hyperHTML from 'hyperhtml';
-
-// for sorting posts from Api use this method at 10 line: res.data.sort((a, b) => new Date(b.date) - new Date(a.date))
-
-async function getPosts(url) {
-  let articles = {};
-  await axios
-    .get(url)
-    .then(res => res.data)
-    .then(json => {
-      articles = json;
-    });
-  return articles;
-}
+import { getPosts } from '../lib/lib';
 
 function generatePosts(data, i) {
   const target = document.querySelector('.js-list');
